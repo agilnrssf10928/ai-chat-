@@ -116,7 +116,7 @@ function parseCodeBlocks(text) {
     });
     
     // Parse inline code
-    result = result.replace(/`([^`]+)`/g, '<code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">$1</code>');
+    result = result.replace(/`([^`]+)`/g, '<code>$1</code>');
     
     return result;
 }
@@ -161,7 +161,7 @@ function saveMessage(text, sender) {
 function clearChatHistory() {
     if (confirm('Yakin mau hapus semua chat?')) {
         localStorage.removeItem(CHAT_STORAGE_KEY);
-        chatBox.innerHTML = '<div class="message ai"><p>Halo! Aku AI, tanya apapun yang mau dibantu 😊</p></div>';
+        chatBox.innerHTML = '<div class="message ai"><div class="message-content"><p>Halo! Aku AI by GIL 🤖<br>Aku sedang dikembangkan, tanya apapun yang mau dibantu! 😊</p></div></div>';
     }
 }
 
@@ -174,11 +174,12 @@ async function sendMessage() {
     displayMessage(message, 'user');
     saveMessage(message, 'user');
     userInput.value = '';
+    userInput.focus();
 
     // Tampilkan loading
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'message ai';
-    loadingDiv.innerHTML = '<p><span class="loading"></span> AI sedang mikir...</p>';
+    loadingDiv.innerHTML = '<div class="message-content"><p><span class="loading"></span> AI sedang mikir...</p></div>';
     chatBox.appendChild(loadingDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 
