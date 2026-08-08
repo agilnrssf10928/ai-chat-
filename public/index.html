@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Chat Application - Tanya apapun ke AI">
+    <meta name="theme-color" content="#667eea">
     <title>AI Chat - Ngobrol Bareng AI 🤖</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,13 +12,13 @@
     <div class="container">
         <div class="header">
             <h1>💬 AI Chat</h1>
-            <p>Tanya apapun, AI akan jawab!</p>
+            <p>Tanya apapun, AI akan jawab! ✨</p>
             <button class="clear-btn" onclick="clearChatHistory()">🗑️ Clear Chat</button>
         </div>
 
         <div class="chat-box" id="chatBox">
             <div class="message ai">
-                <p>Halo! Aku AI BY GIL,AI ini sedang di kembangkan, tanya apapun yang mau dibantu 😊</p>
+                <p>Halo! Aku AI by GIL 🤖<br>Aku sedang dikembangkan, tanya apapun yang mau dibantu! 😊</p>
             </div>
         </div>
 
@@ -26,6 +28,7 @@
                 id="userInput" 
                 placeholder="Ketik pertanyaan kamu..."
                 onkeypress="handleKeyPress(event)"
+                autocomplete="off"
             >
             <button onclick="sendMessage()">Kirim</button>
         </div>
